@@ -1,0 +1,27 @@
+footer {
+  padding: 50px 0;
+
+  h3 {
+    color: $dark-color;
+    font-weight: 500;
+  }
+
+  p {
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+
+  .social-list {
+    margin-top: 10px;
+
+    li {
+      display: inline-block;
+      margin: 0 8px;
+    }
+
+    a {
+      color: $dark-color;
+      font-size: .9rem;
+    }
+  }
+}

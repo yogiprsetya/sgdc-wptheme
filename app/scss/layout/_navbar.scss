@@ -1,0 +1,95 @@
+.main-menu {
+  background: $light-color;
+  min-height: 70px;
+  height: 100%;
+  border-bottom: 1px solid rgba(204, 204, 204, 0.3);
+  -ms-flex-flow: row nowrap;
+  -ms-flex-pack: start;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  
+  .container {
+    height: 70px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    -ms-flex-align: center;
+    -ms-flex-pack: justify;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  nav {
+    overflow: hidden;
+    margin: auto !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    a {
+      color: $text-color;
+      padding: 0 15px;
+      font-size: 15px;
+      text-decoration: none;
+  
+      // &:hover {
+      //   background-color: #db301e
+      // }
+    }
+  }
+
+  .burger-icon {
+    right: 15px;
+    position: absolute;
+    display: none;
+    z-index: 5;
+  }
+
+  svg {
+    fill: $text-color;
+    top: 5px;
+    position: relative
+  }
+
+  .active {
+    color: $base-color
+  }
+
+  // Search
+  .search-button {
+    width: 16px;
+
+    svg {
+      top: 0
+    }
+  }
+
+  .form-search {
+    position: relative;
+    float: right;
+    border-top: 1px solid $base-color;
+    z-index: 2;
+    display: none;
+
+    &.open {
+      display: inline-block;
+    }
+
+    input[type="text"] {
+      padding: 11px 14px;
+      height: 44px;
+      line-height: 44px;
+      position: absolute;
+      border: 2px solid $base-color;
+      right: 0;
+    }
+  }
+
+  a.brand {
+    display: inline-block;
+    position: absolute;
+    color: $text-color;
+    font-weight: 500;
+  }
+}

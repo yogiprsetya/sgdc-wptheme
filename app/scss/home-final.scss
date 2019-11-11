@@ -1,0 +1,28 @@
+/*!
+Theme Name: SGDC WPBlog
+Theme URI: http://underscores.me/
+Author: Yogi Prasetya
+Author URI: https://github.com/yogiprsetya
+Description: Description
+Version: 2.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+*/
+
+// Base
+@import "base/reset";
+@import "base/variable";
+@import "base/fonts";
+@import "base/global";
+
+// Layout
+@import "layout/navbar";
+@import "vendor/owl.carousel";
+@import "layout/footer";
+
+// Section
+@import "section/featured-category";
+@import "section/new-post-carousel";
+
+
+@import "layout/responsive";

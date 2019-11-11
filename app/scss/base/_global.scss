@@ -1,0 +1,59 @@
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  color: $text-color;
+  margin: 0 auto;
+  position: relative;
+  background: $grey-color;
+}
+
+img {
+  vertical-align: middle;
+  max-width: 100%;
+  height: auto
+}
+
+.container {
+  max-width: 1140px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+a,
+a img,
+button,
+button:focus,
+img {
+  outline: none !important;
+  border: 0 !important;
+}
+
+button::-moz-focus-inner {
+  border: 0;
+}
+
+.owl-dots .owl-dot span {
+  width: 9px;
+  height: 9px;
+  margin: 5px 7px;
+  background: #D6D6D6;
+  display: block;
+  transition: opacity .2s ease;
+  border-radius: 30px;
+}
+
+.owl-dot.active span {
+  border: 1px solid #cdcdcd;
+}

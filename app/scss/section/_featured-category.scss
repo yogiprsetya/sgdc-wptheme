@@ -1,0 +1,40 @@
+.featured-category {
+  columns: 3;
+  column-gap: 1.8rem;
+  margin-top: 30px;
+
+  .item-list {
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hover-post {
+    position: absolute;
+    padding: 30px 26px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    .category-link {
+      color: $light-color;
+      font-size: 13px;
+      text-transform: uppercase;
+      padding: 7px 13px;
+      background: $base-color;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+
+    p {
+      color: $light-color;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+}

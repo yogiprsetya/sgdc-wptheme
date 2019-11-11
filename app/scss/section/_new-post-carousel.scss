@@ -1,0 +1,53 @@
+.new-post-carousel {
+  margin-top: 50px;
+  background: $light-color;
+
+  h3 {
+    font-size: 1.13rem;
+    font-weight: 600;
+    padding: 40px 0 25px;
+  }
+
+  .item {
+    img {
+      height: 220px;
+      object-fit: cover;
+    }
+
+    header {
+      min-height: 70px;
+      padding: 22px 0;
+
+      span {
+        color: $base-color;
+        font-size: .8rem;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        display: block;
+      }
+    }
+
+    h2 {
+      font-size: 1rem;
+      color: $dark-color;
+      font-weight: 500;
+    }
+
+    p {
+      font-size: .9rem;
+      color: $text-color;
+
+      a {
+        display: inline-block;
+        color: $text-color;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  .owl-dots {
+    text-align: center;
+    padding-bottom: 30px;
+  }
+
+}

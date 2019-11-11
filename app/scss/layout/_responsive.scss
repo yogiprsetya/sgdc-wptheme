@@ -1,0 +1,61 @@
+@media only screen and (max-width:768px) {
+  .main-menu {
+    nav {
+      display: block;
+
+      &.responsive {
+        padding-bottom: 10px;
+
+        a {
+          float: none;
+          display: block;
+          text-align: left;
+          padding: 9px 15px;
+        }
+      }
+    }
+
+    a {
+      display: none;
+    }
+  }
+
+  .burger-icon {
+    display: block !important;
+  }
+
+  nav.responsive {
+    // position: relative;
+    width: 100%;
+    top: 70px;
+    background: $light-color;
+    position: absolute;
+  }
+
+  // nav.responsive .burger-icon {
+  //   position: absolute;
+  //   right: 0;
+  //   top: 0
+  // }
+
+  // nav.responsive a,
+  // nav.responsive button {
+  //   float: none;
+  //   display: block;
+  //   text-align: left
+  // }
+
+  // main.single-post {
+  //   padding-bottom: 1px;
+  //   width: unset
+  // }
+
+  // .flex-container {
+  //   display: block
+  // }
+
+  // aside {
+  //   padding-top: 0;
+  //   width: unset
+  // }
+}
