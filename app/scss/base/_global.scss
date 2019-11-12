@@ -4,11 +4,10 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  font-size: 18px;
+  font-size: 1.1rem;
   color: $text-color;
   margin: 0 auto;
   position: relative;
-  background: $grey-color;
 }
 
 img {
@@ -23,12 +22,42 @@ img {
   margin: 0 auto;
 }
 
+.row, %row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.column, %column {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
 .text-center {
   text-align: center !important;
 }
 
+h2, h3 {
+  line-height: 1.25;
+}
+
 a {
   text-decoration: none;
+
+  &:hover {
+    color: $primary-color !important
+  }
+
+  &[rel~="author"] {
+    text-transform: capitalize;
+  }
+}
+
+p {
+  line-height: 1.5rem;
+  margin-bottom: 20px;
 }
 
 a,
@@ -56,4 +85,19 @@ button::-moz-focus-inner {
 
 .owl-dot.active span {
   border: 1px solid #cdcdcd;
+}
+
+.site-content {
+  margin: 50px auto;
+}
+
+.wp-block-image {
+  margin-bottom: 20px;
+
+  figcaption {
+    margin-top: 10px;
+    font-size: 1rem;
+    opacity: .9;
+    font-style: italic;
+  }
 }

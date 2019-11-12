@@ -1,25 +1,27 @@
-.new-post-carousel {
+.new-post-home {
   margin-top: 50px;
   background: $light-color;
 
   h3 {
-    font-size: 1.13rem;
-    font-weight: 600;
-    padding: 40px 0 25px;
+    @extend %title-section
   }
 
-  .item {
+  .column {
     img {
       height: 220px;
       object-fit: cover;
     }
 
+    &:not(:last-child) {
+      margin-right: 15px
+    }
+
     header {
       min-height: 70px;
-      padding: 22px 0;
+      padding: 22px 0 40px;
 
       span {
-        color: $base-color;
+        color: $primary-color;
         font-size: .8rem;
         text-transform: uppercase;
         margin-bottom: 10px;

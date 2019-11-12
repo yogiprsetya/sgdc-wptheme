@@ -1,0 +1,27 @@
+.related {
+  background: $grey-color;
+  margin: 40px 0;
+  padding: 35px;
+
+  h3 {
+    @extend %title-section-v2
+  }
+
+  .column:not(:last-child) {
+    margin-right: 25px;
+  }
+
+  img {
+    height: 150px;
+    object-fit: cover;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  a {
+    color: $text-color;
+    font-size: .9rem;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+}

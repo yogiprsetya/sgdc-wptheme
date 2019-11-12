@@ -20,31 +20,24 @@ if ( post_password_required() ) {
 }
 ?>
 
-<div id="comments" class="comments-area">
+<section id="comments" class="comments-area">
 
 	<?php
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) :
 		?>
-		<h2 class="comments-title">
+		<h3>
 			<?php
 			$sgdc_comment_count = get_comments_number();
-			if ( '1' === $sgdc_comment_count ) {
-				printf(
-					/* translators: 1: title. */
-					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'sgdc' ),
-					'<span>' . get_the_title() . '</span>'
-				);
-			} else {
+			if ( $sgdc_comment_count > '0' ) {
 				printf( // WPCS: XSS OK.
 					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $sgdc_comment_count, 'comments title', 'sgdc' ) ),
-					number_format_i18n( $sgdc_comment_count ),
-					'<span>' . get_the_title() . '</span>'
+					esc_html( _nx( '%1$s Comments', '%1$s Comments', $sgdc_comment_count, 'sgdc' ) ),
+					number_format_i18n( $sgdc_comment_count )
 				);
 			}
 			?>
-		</h2><!-- .comments-title -->
+		</h3>
 
 		<?php the_comments_navigation(); ?>
 
@@ -52,6 +45,7 @@ if ( post_password_required() ) {
 			<?php
 			wp_list_comments( array(
 				'style'      => 'ol',
+				'callback' => 'not_default_comments',
 				'short_ping' => true,
 			) );
 			?>
@@ -69,7 +63,11 @@ if ( post_password_required() ) {
 
 	endif; // Check for have_comments().
 
-	comment_form();
+	// comment_form();
 	?>
 
-</div><!-- #comments -->
+</section>
+
+<section class="comment-form-areas">
+	<?php comment_form(); ?>
+</section>

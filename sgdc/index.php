@@ -14,36 +14,12 @@
 
 get_header();
 ?>
-	
+
 	<main class="">
 
-		<section class="container featured-category">
-			<div class="item-list">
-				<img src="<?php echo get_template_directory_uri() . '/img/suka-travel.jpg' ?>" alt="suka travel">
-				<div class="hover-post text-center">
-					<a class="category-link" href="category/wisata">Suka Travel</a>
-					<p>Nyari duit mulu, kapan ngabisinnya.</p>
-				</div>
-			</div>
-
-			<div class="item-list">
-				<img src="<?php echo get_template_directory_uri() . '/img/suka-jajan.jpg' ?>" alt="suka jajan">
-				<div class="hover-post text-center">
-					<a class="category-link" href="category/wisata">Suka Jajan</a>
-					<p>Dietnya nanti aja, yuk mempertebal body.</p>
-				</div>
-			</div>
-
-			<div class="item-list">
-				<img src="<?php echo get_template_directory_uri() . '/img/inspirasi.jpg' ?>" alt="inspirasi">
-				<div class="hover-post text-center">
-					<a class="category-link" href="category/wisata">Inspirasi</a>
-					<p>Buntu ide?, carilah inspirasi disini.</p>
-				</div>
-			</div>
-		</section>
-
+		<?php get_template_part( 'template-parts/features/featured-category'); ?>
 		<?php get_template_part( 'template-parts/features/fresh-post'); ?>
+		<?php get_template_part( 'template-parts/features/popular-today'); ?>
 
 	</main>
 

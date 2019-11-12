@@ -16,7 +16,7 @@ gulp.task('sass', () => {
             message: "Error: <%= error.message %>",
             sound: "Beep"
         })(err);
-      
+
       this.emit('end');
     };
 
@@ -36,11 +36,11 @@ gulp.task('sass', () => {
 gulp.task('js', () => {
     gulp.src('./app/js/*.js')
     .pipe(concat('all.min.js'))
-    .pipe(uglify())
+    // .pipe(uglify())
     .pipe(gulp.dest('./sgdc/js'));
 });
 
-// Default Task. Local webserver dan sinkronisasi dengan browser. 
+// Default Task. Local webserver dan sinkronisasi dengan browser.
 gulp.task('default', () => {
     browserSync.init({
         proxy: "http://localhost/sgdc"

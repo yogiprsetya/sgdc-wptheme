@@ -17,12 +17,16 @@ License URI: LICENSE
 
 // Layout
 @import "layout/navbar";
-@import "vendor/owl.carousel";
+@import "layout/main-content";
+// @import "vendor/owl.carousel";
 @import "layout/footer";
 
 // Section
 @import "section/featured-category";
-@import "section/new-post-carousel";
-
+@import "section/new-post-home";
+@import "section/popular-today";
+@import "section/post-navigation";
+@import "section/related";
+@import "section/comment";
 
 @import "layout/responsive";

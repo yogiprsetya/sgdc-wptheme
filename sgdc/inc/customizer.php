@@ -61,13 +61,13 @@ add_action('wp_footer', 'deregister_scripts');
 
 function remove_wp_block_library_css() {
 	wp_dequeue_style('wp-block-library');
-} 
+}
 add_action('wp_enqueue_scripts', 'remove_wp_block_library_css');
 
 // Remove WP-Emoji Class
-remove_action('wp_head', 'print_emoji_detection_script', 7); 
-remove_action('admin_print_scripts', 'print_emoji_detection_script'); 
-remove_action('wp_print_styles', 'print_emoji_styles'); 
+remove_action('wp_head', 'print_emoji_detection_script', 7);
+remove_action('admin_print_scripts', 'print_emoji_detection_script');
+remove_action('wp_print_styles', 'print_emoji_styles');
 remove_action('admin_print_styles', 'print_emoji_styles');
 
 function excerpt($limit) {
@@ -78,7 +78,103 @@ function excerpt($limit) {
   } else {
     $excerpt = implode(" ", $excerpt);
 	}
-	
+
   $excerpt = preg_replace('`[[^]]*]`', '', $excerpt);
   return $excerpt;
+}
+
+// Make popular post
+function count_post_visits($post_id) {
+	$count_key = 'popular_posts';
+	$count = get_post_meta($post_id, $count_key, true);
+
+	if($count == '') {
+		$count = 0;
+		delete_post_meta($post_id, $count_key);
+		add_post_meta($post_id, $count_key, '0');
+	} else {
+		$count++;
+		update_post_meta($post_id, $count_key, $count);
+	}
+}
+
+function track_post_visits($post_id) {
+	if(!is_single()) return;
+
+	if(empty($post_id)) {
+		global $post;
+		$post_id = $post->ID;
+	}
+
+	count_post_visits($post_id);
+}
+add_action('wp_head', 'track_post_visits');
+
+// Custome comment form
+function wpsites_comment_form_fields( $fields ) {
+  unset($fields['author']);
+  unset($fields['email']);
+  unset($fields['comment_field']);
+	unset($fields['url']);
+
+	$fields['author'] = '<div class="row"><input class="column" required id="author" name="author" placeholder="My name is .." type="text" value="' . esc_attr( $commenter['comment_author'] ) . '"' . $aria_req . ' />';
+	$fields['email']  = '<input class="column" required id="email" name="email" placeholder="My email" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' value="' . esc_attr(  $commenter['comment_author_email'] ) . '"' . $aria_req . ' /></div>';
+  $fields['comment_field'] = '<textarea id="comment" name="comment" cols="45" rows="8" placeholder="Write a comment ..." required></textarea>';
+
+	return $fields;
+}
+add_filter( 'comment_form_default_fields', 'wpsites_comment_form_fields' );
+
+function remove_comment_field( $defaults ) {
+	$defaults['comment_field'] = '';
+	$defaults['title_reply'] = 'Tulis Komentar';
+	$defaults['title_comment'] = 'Tulis Komentar';
+	$defaults['comment_notes_before'] = '';
+	$defaults['class_submit'] = 'btn';
+	$defaults['label_submit'] = 'SEND COMMENT';
+  return $defaults;
+}
+add_filter( 'comment_form_defaults', 'remove_comment_field', 10, 1 );
+
+// Custom comments list
+function not_default_comments( $comment, $args, $depth ) {
+  global $post;
+  $author_id = $post->post_author;
+  $GLOBALS['comment'] = $comment;
+  ?>
+
+  <li id="li-comment-<?php comment_ID(); ?>">
+    <article id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
+      <div class="comment-author">
+        <?php echo get_avatar( $comment, 45 ); ?>
+      </div>
+
+      <div class="comment-details">
+        <header class="comment-meta">
+          <cite><?php comment_author_link(); ?></cite>
+          <?php printf( '<time datetime="%2$s">%3$s</time>',
+            esc_url( get_comment_link( $comment->comment_ID ) ),
+            get_comment_time( 'c' ),
+            sprintf( _x( '%1$s', '1: date', 'twenties' ), get_comment_date() )
+					); ?>
+
+					<div class="comment-reply-link">
+						<?php comment_reply_link( array_merge( $args, array(
+							'reply_text' => esc_html__( 'Reply'),
+							'depth'      => $depth,
+							'max_depth'  => $args['max_depth'] )
+						) ); ?>
+					</div>
+        </header>
+
+        <?php if ( '0' == $comment->comment_approved ) : ?>
+          <p class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'twenties' ); ?></p>
+        <?php endif; ?>
+
+        <div class="comment-content">
+          <?php comment_text(); ?>
+        </div>
+      </div>
+    </article>
+  <?php
 }

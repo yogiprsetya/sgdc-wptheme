@@ -1,11 +1,41 @@
 // ===================================
 // Warna
 // ===================================
-$base-color: #FF768B;
+$primary-color: #FF768B;
 $light-color: #FFF;
 $grey-color: #FAFAFA;
 $text-color: #555;
 $dark-color: #333;
-// $border-color: #32354e;
+$border-color: #EBEBEB;
 // $borderform-color: #707070;
 // $link-color: #3399CC;
+
+// ===================================
+// Heading section
+// ===================================
+%title-section {
+  font-size: 1.13rem;
+  font-weight: 600;
+  padding-bottom: 30px;
+}
+
+%title-section-v2 {
+  padding: 10px 0 25px;
+  border-bottom: 1px solid $border-color;
+  margin-bottom: 30px;
+  color: $dark-color;
+  font-weight: 700
+}
+
+
+// ===================================
+// Webkit presets
+// ===================================
+// Generate border radius
+@mixin border-radius($rad) {
+	-webkit-border-radius: $rad;
+	-moz-border-radius: $rad;
+	-o-border-radius: $rad;
+	border-radius: $rad;
+}
+

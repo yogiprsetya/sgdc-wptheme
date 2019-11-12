@@ -1,0 +1,39 @@
+.nav-links {
+  @extend %row;
+
+  div {
+    @extend %column;
+    font-size: 1rem;
+  }
+
+  a {
+    color: $dark-color;
+    line-height: 1.3;
+
+    span {
+      display: block;
+      text-transform: uppercase;
+      font-size: .7rem;
+      color: $text-color;
+      margin-bottom: 10px;
+    }
+  }
+
+  .nav-previous {
+    padding-right: 10px;
+  }
+
+  .nav-next {
+    text-align: right;
+    padding-left: 10px;
+  }
+}
+
+.post-navigation h2.screen-reader-text {
+  display: none;
+}
+
+.entry-footer {
+  padding-top: 40px;
+  border-top: 1px solid $border-color;
+}

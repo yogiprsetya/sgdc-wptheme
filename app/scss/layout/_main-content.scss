@@ -1,0 +1,42 @@
+.site-content {
+
+  main {
+    &.column {
+      flex-basis: 39.5%;
+      margin-right: 47px;
+    }
+  }
+
+  .post-thumbnail img {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .post-category a {
+    font-weight: 400;
+    text-transform: uppercase;
+    color: $primary-color;
+    font-size: 1rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    color: $dark-color;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 7px 0 15px;
+  }
+
+  .entry-meta {
+    font-size: 1rem;
+    color: $text-color;
+
+    .author {
+      text-transform: capitalize;
+    }
+  }
+
+  .entry-content {
+    margin: 5% 0 75px;
+  }
+}

@@ -7,7 +7,7 @@
   -ms-flex-pack: start;
   flex-flow: row nowrap;
   justify-content: flex-start;
-  
+
   .container {
     height: 70px;
     display: -ms-flexbox;
@@ -32,7 +32,7 @@
       padding: 0 15px;
       font-size: 15px;
       text-decoration: none;
-  
+
       // &:hover {
       //   background-color: #db301e
       // }
@@ -53,7 +53,7 @@
   }
 
   .active {
-    color: $base-color
+    color: $primary-color
   }
 
   // Search
@@ -68,7 +68,7 @@
   .form-search {
     position: relative;
     float: right;
-    border-top: 1px solid $base-color;
+    border-top: 1px solid $primary-color;
     z-index: 2;
     display: none;
 
@@ -81,7 +81,7 @@
       height: 44px;
       line-height: 44px;
       position: absolute;
-      border: 2px solid $base-color;
+      border: 2px solid $primary-color;
       right: 0;
     }
   }

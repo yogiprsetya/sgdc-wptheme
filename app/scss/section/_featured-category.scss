@@ -1,11 +1,15 @@
 .featured-category {
-  columns: 3;
-  column-gap: 1.8rem;
-  margin-top: 30px;
+  background: $grey-color;
+
+  .container {
+    padding: 5rem 0;
+  }
+
+  .column:not(:last-child) {
+    margin-right: 15px;
+  }
 
   .item-list {
-    display: inline-block;
-    width: 100%;
     position: relative;
     overflow: hidden;
   }
@@ -19,12 +23,16 @@
 
     .category-link {
       color: $light-color;
-      font-size: 13px;
+      font-size: .8rem;
       text-transform: uppercase;
       padding: 7px 13px;
-      background: $base-color;
+      background: $primary-color;
       margin-bottom: 10px;
       display: inline-block;
+
+      &:hover {
+        color: $light-color !important
+      }
     }
 
     p {
