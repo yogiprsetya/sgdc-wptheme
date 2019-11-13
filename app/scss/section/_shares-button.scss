@@ -1,0 +1,67 @@
+.shares-button {
+  display: inline;
+  float: right;
+
+  li {
+    display: inline;
+
+    &:not(:last-child) {
+      margin-right: 10px
+    }
+
+    a {
+      border: 1px solid $border-color;
+      background: $light-color;
+      padding: 6px 16px;
+      color: $text-color;
+      @include border-radius(30px);
+
+      &:hover {
+        color: $light-color !important;
+      }
+
+      &.facebook {
+        svg {
+          fill: #483cea
+        }
+
+        &:hover {
+          background: #483cea;
+
+          svg {
+            fill: $light-color !important
+          }
+        }
+      }
+
+      &.twitter {
+        svg {
+          fill: #5199f2
+        }
+
+        &:hover {
+          background: #5199f2;
+
+          svg {
+            fill: $light-color !important
+          }
+        }
+      }
+
+      &.whatsapp {
+        svg {
+          fill: #4bc25a;
+        }
+
+        &:hover {
+          background: #4bc25a;
+
+          svg {
+            fill: $light-color !important
+          }
+        }
+      }
+
+    }
+  }
+}

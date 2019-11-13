@@ -143,21 +143,14 @@ function not_default_comments( $comment, $args, $depth ) {
   $GLOBALS['comment'] = $comment;
   ?>
 
-  <li id="li-comment-<?php comment_ID(); ?>">
-    <article id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
+  <li id="li-comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
+    <article id="comment-<?php comment_ID(); ?>">
       <div class="comment-author">
         <?php echo get_avatar( $comment, 45 ); ?>
       </div>
 
       <div class="comment-details">
         <header class="comment-meta">
-          <cite><?php comment_author_link(); ?></cite>
-          <?php printf( '<time datetime="%2$s">%3$s</time>',
-            esc_url( get_comment_link( $comment->comment_ID ) ),
-            get_comment_time( 'c' ),
-            sprintf( _x( '%1$s', '1: date', 'twenties' ), get_comment_date() )
-					); ?>
-
 					<div class="comment-reply-link">
 						<?php comment_reply_link( array_merge( $args, array(
 							'reply_text' => esc_html__( 'Reply'),
@@ -165,6 +158,13 @@ function not_default_comments( $comment, $args, $depth ) {
 							'max_depth'  => $args['max_depth'] )
 						) ); ?>
 					</div>
+					<cite><?php comment_author_link(); ?></cite>
+
+          <?php printf( '<time datetime="%2$s">%3$s</time>',
+            esc_url( get_comment_link( $comment->comment_ID ) ),
+            get_comment_time( 'c' ),
+            sprintf( _x( '%1$s', '1: date', 'twenties' ), get_comment_date() )
+					); ?>
         </header>
 
         <?php if ( '0' == $comment->comment_approved ) : ?>

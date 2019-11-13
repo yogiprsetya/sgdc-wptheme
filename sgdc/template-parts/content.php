@@ -61,6 +61,21 @@
 		?>
 	</div>
 
+	<div class="content-foot">
+		<?php
+			$tags = get_tags(array(
+				'hide_empty' => false
+			));
+			echo '<ul class="post-tags">';
+			foreach ($tags as $tag) {
+				echo '<li><a href="'. get_tag_link( $tag->term_id ) .'">' . $tag->name . '</a></li>';
+			}
+			echo '</ul>';
+
+			get_template_part( 'template-parts/features/share-button');
+		?>
+	</div>
+
 	<div class="entry-footer">
 		<?php the_post_navigation(array(
 			'prev_text' => __( '<span>< Previous post</span> %title' ),

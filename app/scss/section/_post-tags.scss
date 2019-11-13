@@ -1,0 +1,22 @@
+.post-tags {
+  display: inline;
+
+  li {
+    display: inline;
+
+    &:not(:last-child) {
+      margin-right: 15px
+    }
+  }
+
+  a {
+    color: $text-color;
+    padding: 6px 15px;
+    border: 1px solid $border-color;
+
+    &:hover {
+      background: $primary-color;
+      color: $light-color !important
+    }
+  }
+}

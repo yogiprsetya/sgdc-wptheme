@@ -1,12 +1,4 @@
-.comment-form-areas {
-  background: $grey-color;
-  padding: 30px;
-  margin-bottom: 1.875rem;
-
-  h3 {
-    @extend %title-section-v2
-  }
-
+.comment-respond {
   input, textarea {
     display: block;
     padding: 0.75rem 1.25rem;
@@ -29,15 +21,6 @@
 
   .comment-form-cookies-consent {
     display: none;
-    // display: flex;
-
-    // input {
-    //   margin: 0 10px 0 0;
-    // }
-
-    // label {
-    //   font-size: .9rem;
-    // }
   }
 
   input.btn {
@@ -51,15 +34,36 @@
       background: $primary-color
     }
   }
+
+  small {
+    font-weight: 400;
+    font-size: 1rem;
+    float: right;
+    color: $primary-color
+  }
+
+}
+
+.comment-form-areas {
+  background: $grey-color;
+  padding: 30px;
+  margin-bottom: 1.875rem;
+
+  h3 {
+    @extend %title-section-v2
+  }
+
+
 }
 
 .comments-area {
+  margin-bottom: 3rem;
+
   h3 {
     @extend %title-section-v2;
   }
 
   .comment-author {
-    display: inline-block;
     float: left;
     margin-right: 20px;
   }
@@ -86,6 +90,17 @@
 
   .comment-content {
     margin-top: 20px;
+    font-size: 1rem;
+  }
+
+  article ~ .children {
+    margin: 1rem 0 0 2rem;
+  }
+
+  .depth-1 {
+    border-bottom: 1px solid $border-color;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
   }
 }
 

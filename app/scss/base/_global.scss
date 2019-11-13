@@ -45,6 +45,7 @@ h2, h3 {
 
 a {
   text-decoration: none;
+  color: $primary-color;
 
   &:hover {
     color: $primary-color !important
@@ -60,7 +61,6 @@ p {
   margin-bottom: 20px;
 }
 
-a,
 a img,
 button,
 button:focus,
