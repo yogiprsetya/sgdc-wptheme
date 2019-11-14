@@ -1,15 +1,17 @@
 @media only screen and (max-width:768px) {
+  // layout/_navbar.scss
   .main-menu {
     nav {
       display: block;
+      z-index: 1;
+      right: 0;
+      width: 100%;
 
       &.responsive {
         padding-bottom: 10px;
 
         a {
-          float: none;
           display: block;
-          text-align: left;
           padding: 9px 15px;
         }
       }
@@ -25,37 +27,135 @@
   }
 
   nav.responsive {
-    // position: relative;
-    width: 100%;
     top: 70px;
     background: $light-color;
     position: absolute;
   }
 
-  // nav.responsive .burger-icon {
-  //   position: absolute;
-  //   right: 0;
-  //   top: 0
-  // }
+  // section/__featured-category.scss
+  .featured-category {
+    .container {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
 
-  // nav.responsive a,
-  // nav.responsive button {
-  //   float: none;
-  //   display: block;
-  //   text-align: left
-  // }
+    .item-list {
+      flex-basis: 100%;
+      margin-right: 0 !important;
+      margin-bottom: 18px;
+    }
 
-  // main.single-post {
-  //   padding-bottom: 1px;
-  //   width: unset
-  // }
+    img {
+      height: 240px;
+      object-fit: cover;
+    }
+  }
 
-  // .flex-container {
-  //   display: block
-  // }
+  // section/_new-post-home.scss
+  .new-post-home {
+    article {
+      flex-basis: 50%;
+      max-width: 50%;
 
-  // aside {
-  //   padding-top: 0;
-  //   width: unset
-  // }
+      &:nth-child(even) {
+        padding-right: 0
+      }
+
+      h2 {
+        font-size: inherit;
+      }
+    }
+  }
+
+  // section/_popular-today.scss
+  .popular-today {
+    article {
+      flex-basis: 100%;
+      width: 100%;
+      padding-right: 0 !important;
+    }
+  }
+
+  // layout/_archive.scss
+  .archive {
+    .description {
+      width: unset;
+    }
+  }
+
+  // layout/_main-content.scss
+  .site-content {
+    main {
+      flex-basis: 100%;
+      width: 100%;
+      padding-right: 0;
+    }
+
+    aside {
+      flex-basis: 100%;
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+
+  // section/_share-button.scss
+  .shares-button {
+    float: none;
+    display: block;
+    margin-top: 2.2rem;
+  }
+
+  // section/_related.scss
+  .related {
+    padding: 20px;
+
+    .column:not(:last-child) {
+      margin-right: 7px;
+    }
+
+    img {
+      height: 130px;
+    }
+  }
+
+  // layout/_archive.scss
+  .category-page {
+    margin-top: 3rem;
+
+    main {
+      &.column {
+        flex-basis: unset;
+        margin-right: 0;
+      }
+    }
+  }
+
+  // section/_comment.scss
+  .comment-respond {
+    #author, #email {
+      flex-basis: 100%;
+      width: 100%;
+    }
+
+    input, textarea {
+      margin-bottom: 1.4rem;
+    }
+  }
+
+  // section/_archive.scss
+  .category-page {
+    main {
+      flex-basis: 100%;
+      width: 100%;
+      padding-right: 0;
+    }
+
+    aside {
+      flex-basis: 100%;
+      max-width: 100%;
+    }
+  }
 }

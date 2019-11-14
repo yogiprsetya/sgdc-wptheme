@@ -1,4 +1,13 @@
 .comment-respond {
+  #author, #email {
+    flex-basis: 48%;
+    width: 48%;
+  }
+
+  #email {
+    margin-left: auto;
+  }
+
   input, textarea {
     display: block;
     padding: 0.75rem 1.25rem;
@@ -13,10 +22,6 @@
 
   textarea {
     width: 100%;
-  }
-
-  input:not(:last-child):not(#wp-comment-cookies-consent) {
-    margin-right: 30px
   }
 
   .comment-form-cookies-consent {
@@ -50,10 +55,11 @@
   margin-bottom: 1.875rem;
 
   h3 {
-    @extend %title-section-v2
+    @extend %title-section-v2;
+    font-size: 1.4rem !important;
+    margin: 10px 0 30px;
+    padding-top: 0;
   }
-
-
 }
 
 .comments-area {
@@ -61,6 +67,9 @@
 
   h3 {
     @extend %title-section-v2;
+    font-size: 1.4rem !important;
+    margin: 10px 0 30px;
+    padding-top: 0;
   }
 
   .comment-author {
@@ -104,10 +113,10 @@
   }
 }
 
-.comment-reply-link {
+a.comment-reply-link {
   float: right;
-  padding: 0.25rem 0.5rem;
-  font-size: 0.75rem;
+  padding: .4rem .85rem;
+  font-size: .7rem;
   border: 1px solid $border-color;
   @include border-radius(1.25rem);
 

@@ -1,15 +1,36 @@
 .site-content {
-
   main {
-    &.column {
-      flex-basis: 39.5%;
-      margin-right: 47px;
-    }
+    flex-basis: 66%;
+    width: 66%;
+    @extend %boz-sizing;
+    padding-right: 47px;
   }
 
-  .post-thumbnail img {
+  h2, h3, h4, h5 {
+    color: $dark-color;
+    font-weight: 500;
+    margin: 20px 0 10px;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  h3 {
+    font-size: 1.6rem;
+  }
+
+  h4 {
+    font-size: 1.4rem;
+  }
+
+  h5 {
+    font-size: 1.25rem;
+  }
+
+  .size-featured-image {
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
   }
 
   .post-category a {
@@ -21,7 +42,7 @@
   h1 {
     font-size: 1.8rem;
     color: $dark-color;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 1.2;
     margin: 7px 0 15px;
   }
@@ -36,7 +57,42 @@
   }
 
   .entry-content {
-    margin: 5% 0 50px;
+    margin: 5% 0 10%;
+
+    img {
+      width: 100%;
+    }
+
+    a {
+      color: $dark-color;
+      text-decoration: underline;
+    }
+
+    ul {
+      margin: 0 0 20px 30px;
+      list-style: disc;
+
+      li {
+        margin-bottom: 5px;
+        line-height: 1.5rem;
+      }
+    }
+
+    blockquote {
+      padding: 30px 22px;
+      border-top: 1px solid $border-color;
+      border-bottom: 1px solid $border-color;
+      text-align: center;
+      color: $dark-color;
+      font-size: 1.3rem;
+      line-height: 1.5rem;
+      margin: 30px 0;
+
+      cite {
+        color: $text-color;
+        font-size: 1.1rem;
+      }
+    }
   }
 
   .content-foot {

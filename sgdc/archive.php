@@ -10,44 +10,50 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+	<?php if ( have_posts() ) : ?>
 
-		<?php if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
-
+	<header class="page-header">
+		<div class="container">
 			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+			the_archive_title( '<h1>', '</h1>' );
+			the_archive_description( '<div class="description">', '</div>' );
+			?>
+		</div>
+	</header>
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+	<section class="category-page row container">
+		<main role="main">
+			<?php while ( have_posts() ) : the_post(); ?>
 
-			endwhile;
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				<div class="">
+					<a href="<?php echo post_permalink() ?>" itemprop="url" rel="bookmark">
+						<?php if (has_post_thumbnail( $post->ID ) ):
+							$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large') ?>
+							<img data-src="<?php echo $image[0]; ?>" alt="<?php echo get_the_title() ?>" itemprop="image">
+						<?php endif; ?>
+					</a>
+				</div>
 
-			the_posts_navigation();
+				<header>
+					<?php the_title( '<h2 itemprop="headline"><a href="' . esc_url( get_permalink() ) . '" itemprop="url" rel="bookmark">', '</a></h2>' ); ?>
+					<?php sgdc_posted_on() ?>
 
-		else :
+					<div itemprop="text">
+						<?php the_excerpt(); ?>
+					</div>
+				</header>
+			</article>
+			<?php
+				endwhile;
+					echo sgdc_get_pagination();
+				else :
+					get_template_part( 'template-parts/content', 'none' );
+				endif;
+			?>
+		</main>
 
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
+		<?php get_sidebar(); ?>
+	</section>
 <?php
-get_sidebar();
 get_footer();

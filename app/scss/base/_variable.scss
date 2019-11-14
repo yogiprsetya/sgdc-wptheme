@@ -7,15 +7,13 @@ $grey-color: #FAFAFA;
 $text-color: #555;
 $dark-color: #333;
 $border-color: #EBEBEB;
-// $borderform-color: #707070;
-// $link-color: #3399CC;
 
 // ===================================
 // Heading section
 // ===================================
 %title-section {
   font-size: 1.13rem;
-  font-weight: 600;
+  font-weight: 500;
   padding-bottom: 30px;
 }
 
@@ -24,9 +22,15 @@ $border-color: #EBEBEB;
   border-bottom: 1px solid $border-color;
   margin-bottom: 30px;
   color: $dark-color;
-  font-weight: 700
+  font-weight: 500
 }
 
+%tag-cat-span {
+  font-size: .8rem;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: block;
+}
 
 // ===================================
 // Webkit presets

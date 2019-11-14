@@ -20,7 +20,7 @@
       while( $my_query->have_posts() ) {
           $my_query->the_post();?>
 
-          <div class="column">
+          <article>
             <a href="<?php the_permalink()?>" rel="bookmark" title="<?php the_title(); ?>">
               <?php if (has_post_thumbnail( $post->ID ) ):
                 $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail') ?>
@@ -29,7 +29,7 @@
             </a>
 
             <a href="<?php the_permalink()?>" rel="bookmark" title="<?php the_title(); ?>"><?php  echo substr(get_the_title(), 0, 45) ?></a>
-          </div>
+          </article>
     <?php } echo '</div>'; }
   }
   $post = $orig_post;

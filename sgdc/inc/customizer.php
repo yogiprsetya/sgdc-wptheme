@@ -117,8 +117,8 @@ function wpsites_comment_form_fields( $fields ) {
   unset($fields['comment_field']);
 	unset($fields['url']);
 
-	$fields['author'] = '<div class="row"><input class="column" required id="author" name="author" placeholder="My name is .." type="text" value="' . esc_attr( $commenter['comment_author'] ) . '"' . $aria_req . ' />';
-	$fields['email']  = '<input class="column" required id="email" name="email" placeholder="My email" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' value="' . esc_attr(  $commenter['comment_author_email'] ) . '"' . $aria_req . ' /></div>';
+	$fields['author'] = '<div class="row"><input required id="author" name="author" placeholder="My name is .." type="text" value="' . esc_attr( $commenter['comment_author'] ) . '"' . $aria_req . ' />';
+	$fields['email']  = '<input required id="email" name="email" placeholder="My email" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' value="' . esc_attr(  $commenter['comment_author_email'] ) . '"' . $aria_req . ' /></div>';
   $fields['comment_field'] = '<textarea id="comment" name="comment" cols="45" rows="8" placeholder="Write a comment ..." required></textarea>';
 
 	return $fields;
@@ -178,3 +178,32 @@ function not_default_comments( $comment, $args, $depth ) {
     </article>
   <?php
 }
+
+add_filter( 'get_the_archive_title', function ($title) {
+	if ( is_category() ) {
+		$title = single_cat_title( '', false );
+	} elseif ( is_tag() ) {
+		$title = single_tag_title( '', false );
+	} elseif ( is_author() ) {
+		$title = '<span class="vcard">' . get_the_author() . '</span>' ;
+	} elseif ( is_tax() ) {
+		$title = sprintf( __( '%1$s' ), single_term_title( '', false ) );
+	}
+	return $title;
+});
+
+// Pagination number mode
+function sgdc_get_pagination(){
+	global $wp_rewrite;
+	global $wp_query;
+	return paginate_links( apply_filters('args', array(
+		'base'      => str_replace('99999', '%#%', esc_url(get_pagenum_link(99999))),
+		'format'    => $wp_rewrite->using_permalinks() ? 'page/%#%' : '?paged=%#%',
+		'current'   => max(1, get_query_var('paged')),
+		'total'     => $wp_query->max_num_pages,
+		'prev_text' => 'PREV PAGE',
+		'next_text' => 'NEXT PAGE',
+		'type'      => 'list'
+	)));
+}
+

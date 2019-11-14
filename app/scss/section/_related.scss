@@ -4,11 +4,20 @@
   padding: 35px;
 
   h3 {
-    @extend %title-section-v2
+    @extend %title-section-v2;
+    font-size: 1.4rem !important;
+    margin-bottom: 30px !important;
+    margin: 10px 0 30px;
+    padding-top: 0;
   }
 
-  .column:not(:last-child) {
-    margin-right: 25px;
+  article {
+    flex-basis: 33.33333333%;
+    max-width: 33.33333333%;
+
+    &:not(:last-child) {
+      padding-right: 15px;
+    }
   }
 
   img {

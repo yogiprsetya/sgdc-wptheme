@@ -12,8 +12,6 @@
 // }
 ?>
 
-<aside class="column widget-area">
-	<?php //dynamic_sidebar( 'sidebar-1' ); ?>
-	<h2>EHEHEHE</h2>
-	<p>yekali yeee</p>
-</aside><!-- #secondary -->
+<aside>
+	<?php get_template_part( 'template-parts/features/fresh-post-aside'); ?>
+</aside>

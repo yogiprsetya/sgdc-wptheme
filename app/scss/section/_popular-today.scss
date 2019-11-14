@@ -6,12 +6,13 @@
     padding: 3rem 0 2.2rem;
   }
 
-  .column {
-    flex-basis: 33.333%;
+  article {
+    flex-basis: 50%;
+    width: 50%;
     margin-bottom: 40px;
 
     &:nth-child(odd) {
-      margin-right: 30px
+      padding-right: 30px
     }
   }
 
@@ -19,7 +20,8 @@
     color: $primary-color;
     font-size: .8rem;
     text-transform: uppercase;
-    padding: 25px 0 10px
+    margin: 25px 0 10px;
+    display: block;
   }
 
   p {
@@ -28,7 +30,7 @@
   }
 
   .post-info {
-    padding: 11px 0 15px;
+    margin: 11px 0 15px;
 
     a {
       font-weight: 400;

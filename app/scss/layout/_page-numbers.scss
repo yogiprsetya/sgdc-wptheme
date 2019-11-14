@@ -1,0 +1,29 @@
+.page-numbers {
+  font-size: .9rem;
+  margin: 3rem auto;
+
+  li {
+    display: inline-block;
+
+    span {
+      padding: 10px 15px;
+      border: 1px solid $border-color;
+      color: $primary-color
+    }
+
+    a {
+      color: $text-color;
+      padding: 10px 15px;
+      border: 1px solid transparent;
+
+      &:hover {
+        border: 1px solid $border-color;
+      }
+
+    }
+
+    &:not(:last-child):not(:first-child) {
+      margin-right: 5px
+    }
+  }
+}

@@ -15,7 +15,7 @@
 get_header();
 ?>
 
-	<main class="">
+	<main role="main">
 
 		<?php get_template_part( 'template-parts/features/featured-category'); ?>
 		<?php get_template_part( 'template-parts/features/fresh-post'); ?>

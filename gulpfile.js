@@ -6,7 +6,7 @@ var gulp  = require('gulp')
     plumber = require('gulp-plumber')
     notify = require('gulp-notify')
     concat = require('gulp-concat')
-    uglify = require('gulp-uglify')
+    terser = require('gulp-terser')
 
 gulp.task('sass', () => {
     var onError = function(err) {
@@ -22,7 +22,7 @@ gulp.task('sass', () => {
 
     return gulp.src('./app/scss/**/*.scss')
         .pipe(plumber({errorHandler: onError}))
-        .pipe(sass({ style: 'compact' }))
+        .pipe(sass({ outputStyle: 'compressed' }))
         .pipe(concat('style.css'))
         .pipe(gulp.dest('./sgdc'))
         .pipe(notify({
@@ -36,7 +36,7 @@ gulp.task('sass', () => {
 gulp.task('js', () => {
     gulp.src('./app/js/*.js')
     .pipe(concat('all.min.js'))
-    // .pipe(uglify())
+    .pipe(terser())
     .pipe(gulp.dest('./sgdc/js'));
 });
 

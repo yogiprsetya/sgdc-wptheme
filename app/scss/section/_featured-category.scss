@@ -2,16 +2,17 @@
   background: $grey-color;
 
   .container {
-    padding: 5rem 0;
-  }
-
-  .column:not(:last-child) {
-    margin-right: 15px;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
   }
 
   .item-list {
     position: relative;
     overflow: hidden;
+
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
   }
 
   .hover-post {
@@ -38,7 +39,7 @@
     p {
       color: $light-color;
       font-size: 1.5rem;
-      font-weight: 700;
+      font-weight: 500;
     }
   }
 

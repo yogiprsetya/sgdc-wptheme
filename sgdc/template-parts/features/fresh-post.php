@@ -10,19 +10,19 @@
         while($arr_posts->have_posts()) :
           $arr_posts->the_post(); ?>
 
-          <article id="post-<?php the_ID(); ?>" <?php post_class('column'); ?> itemscope>
+          <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope>
             <a href="<?php echo post_permalink() ?>" itemprop="url" rel="bookmark">
               <?php
                 if(has_post_thumbnail()) :
                   the_post_thumbnail('medium', ['class' => 'lazy']);
                 endif;
               ?>
-              <header class="text-center">
+              <header>
                 <span>
                   <?php $category = get_the_category(); echo $category[0]->cat_name; ?>
                 </span>
 
-                <h2 class="entry-title" itemprop="headline"><?php the_title(); ?></h2>
+                <h2 itemprop="headline"><?php the_title(); ?></h2>
 
                 <p class="post-info">
                   <?php the_author_posts_link(); ?> |

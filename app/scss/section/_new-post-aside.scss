@@ -1,0 +1,35 @@
+.new-post-aside {
+  background: $grey-color;
+  padding: 20px;
+
+  h3 {
+    @extend %title-section-v2;
+    font-size: 1.4rem !important;
+    margin: 10px 0 30px;
+    padding-top: 0;
+  }
+
+  h2 {
+    color: $dark-color;
+    font-size: .9rem;
+  }
+
+  header span {
+    @extend %tag-cat-span;
+    color: $primary-color;
+  }
+
+  p a {
+    font-size: .9rem;
+    color: $text-color;
+  }
+
+  article {
+    margin-bottom: 20px;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $border-color;
+      padding-bottom: 20px;
+    }
+  }
+}

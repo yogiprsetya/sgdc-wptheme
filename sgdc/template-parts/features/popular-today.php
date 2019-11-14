@@ -22,7 +22,7 @@
       while ($popular->have_posts()) : $popular->the_post();
     ?>
 
-    <article class="column" itemscope>
+    <article itemscope>
       <?php the_post_thumbnail('lazy'); ?>
 
       <span>

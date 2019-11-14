@@ -16,15 +16,16 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<link rel="shortcut icon" type="image/x-icon" href="https://sukagitu.com/wp-content/uploads/2016/05/tempat-wisata-300x300.png"/>
 
 	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
 
-<header class="main-menu">
+<header class="main-menu" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
 	<section class="container">
-		<a class="brand" href="/">SGDC
+		<a class="brand" href="https://sukagitu.com/">SGDC
 			<!-- <img src="http://nunforest.com/mite-demo/images/logo.png" alt="logo sgdc"> -->
 		</a>
 
@@ -32,12 +33,12 @@
 			<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="30" height="30" viewBox="0 0 512 512"><path d="M491.3 235.3H20.7a20.7 20.7 0 1 0 0 41.4h470.6a20.7 20.7 0 1 0 0-41.4zM491.3 78.4H20.7a20.7 20.7 0 0 0 0 41.4h470.6a20.7 20.7 0 1 0 0-41.4zM491.3 392.2H20.7a20.7 20.7 0 1 0 0 41.4h470.6a20.7 20.7 0 1 0 0-41.4z"/></svg>
 		</a>
 
-		<nav id="myTopnav" class="topnav">
-			<a href="" class="active">SUKA JALAN</a>
-			<a href="">SUKA JAJAN</a>
-			<a href="">LIFESTYLE</a>
-			<a href="">INSPIRASI</a>
-			<a href="">SAY HI!</a>
+		<nav id="myTopnav" class="topnav" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+			<a href="/category/wisata/" class="active">SUKA JALAN</a>
+			<a href="/category/kuliner/">SUKA JAJAN</a>
+			<a href="/category/gaya-hidup">LIFESTYLE</a>
+			<a href="/category/inspirasi">INSPIRASI</a>
+			<a href="/kontak">SAY HI!</a>
 		</nav>
 
 		<form class="form-search" id="search">

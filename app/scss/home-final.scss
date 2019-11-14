@@ -11,19 +11,23 @@ License URI: LICENSE
 
 // Base
 @import "base/reset";
-@import "base/variable";
 @import "base/fonts";
+@import "base/variable";
 @import "base/global";
+@import "base/flex-grid";
 
 // Layout
 @import "layout/navbar";
 @import "layout/main-content";
-// @import "vendor/owl.carousel";
+@import "layout/aside";
+@import "layout/archive";
+@import "layout/page-numbers";
 @import "layout/footer";
 
 // Section
 @import "section/featured-category";
 @import "section/new-post-home";
+@import "section/new-post-aside";
 @import "section/popular-today";
 @import "section/post-navigation";
 @import "section/related";

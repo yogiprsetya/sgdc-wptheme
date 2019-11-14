@@ -1,5 +1,4 @@
 .shares-button {
-  display: inline;
   float: right;
 
   li {
@@ -61,6 +60,20 @@
           }
         }
       }
+
+      // &.like {
+      //   svg {
+      //     fill: $primary-color;
+      //   }
+
+      //   &:hover {
+      //     background: $primary-color;
+
+      //     svg {
+      //       fill: $light-color !important
+      //     }
+      //   }
+      // }
 
     }
   }

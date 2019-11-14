@@ -10,7 +10,7 @@
 get_header();
 ?>
 	<section class="site-content row container">
-		<main role="main" class="column">
+		<main role="main">
 
 			<?php
 				while ( have_posts() ) :

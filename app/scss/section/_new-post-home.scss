@@ -1,19 +1,21 @@
 .new-post-home {
   margin-top: 50px;
-  background: $light-color;
 
   h3 {
-    @extend %title-section
+    @extend %title-section;
   }
 
-  .column {
+  article {
+    flex-basis: 25%;
+    max-width: 25%;
+
     img {
       height: 220px;
       object-fit: cover;
     }
 
     &:not(:last-child) {
-      margin-right: 15px
+      padding-right: 15px
     }
 
     header {
@@ -21,10 +23,7 @@
       padding: 22px 0 40px;
 
       span {
-        font-size: .8rem;
-        text-transform: uppercase;
-        margin-bottom: 10px;
-        display: block;
+        @extend %tag-cat-span
       }
     }
 

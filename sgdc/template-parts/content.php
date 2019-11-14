@@ -11,7 +11,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope="itemscope" itemtype="http://schema.org/CreativeWork">
 
-	<?php sgdc_post_thumbnail(); ?>
+	<?php the_post_thumbnail('featured-image'); ?>
 
 	<header>
 		<span class="post-category">
@@ -53,25 +53,12 @@
 			),
 			get_the_title()
 		) );
-
-		// wp_link_pages( array(
-		// 	'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'sgdc' ),
-		// 	'after'  => '</div>',
-		// ) );
 		?>
 	</div>
 
 	<div class="content-foot">
 		<?php
-			$tags = get_tags(array(
-				'hide_empty' => false
-			));
-			echo '<ul class="post-tags">';
-			foreach ($tags as $tag) {
-				echo '<li><a href="'. get_tag_link( $tag->term_id ) .'">' . $tag->name . '</a></li>';
-			}
-			echo '</ul>';
-
+			the_tags('<ul class="post-tags"><li>', '</li><li>', '</li></ul>');
 			get_template_part( 'template-parts/features/share-button');
 		?>
 	</div>
