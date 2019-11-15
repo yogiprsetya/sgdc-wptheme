@@ -33,12 +33,14 @@
 			<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="30" height="30" viewBox="0 0 512 512"><path d="M491.3 235.3H20.7a20.7 20.7 0 1 0 0 41.4h470.6a20.7 20.7 0 1 0 0-41.4zM491.3 78.4H20.7a20.7 20.7 0 0 0 0 41.4h470.6a20.7 20.7 0 1 0 0-41.4zM491.3 392.2H20.7a20.7 20.7 0 1 0 0 41.4h470.6a20.7 20.7 0 1 0 0-41.4z"/></svg>
 		</a>
 
-		<nav id="myTopnav" class="topnav" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-			<a href="/category/wisata/" class="active">SUKA JALAN</a>
-			<a href="/category/kuliner/">SUKA JAJAN</a>
-			<a href="/category/gaya-hidup">LIFESTYLE</a>
-			<a href="/category/inspirasi">INSPIRASI</a>
-			<a href="/kontak">SAY HI!</a>
+		<nav id="myTopnav" class="topnav" role="navigation">
+			<ul itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+				<li itemprop="name"><a itemprop="url" href="/category/wisata/" class="active">SUKA JALAN</a></li>
+				<li itemprop="name"><a itemprop="url" href="/category/kuliner/">SUKA JAJAN</a></li>
+				<li itemprop="name"><a itemprop="url" href="/category/gaya-hidup">LIFESTYLE</a></li>
+				<li itemprop="name"><a itemprop="url" href="/category/inspirasi">INSPIRASI</a></li>
+				<li itemprop="name"><a itemprop="url" href="/kontak">SAY HI!</a></li>
+			</ul>
 		</nav>
 
 		<form class="form-search" id="search">

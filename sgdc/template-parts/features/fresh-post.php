@@ -10,7 +10,7 @@
         while($arr_posts->have_posts()) :
           $arr_posts->the_post(); ?>
 
-          <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope>
+          <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope itemtype="http://schema.org/CreativeWork">
             <a href="<?php echo post_permalink() ?>" itemprop="url" rel="bookmark">
               <?php
                 if(has_post_thumbnail()) :

@@ -25,15 +25,13 @@ get_header();
 		<main role="main">
 			<?php while ( have_posts() ) : the_post(); ?>
 
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-				<div class="">
-					<a href="<?php echo post_permalink() ?>" itemprop="url" rel="bookmark">
-						<?php if (has_post_thumbnail( $post->ID ) ):
-							$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large') ?>
-							<img data-src="<?php echo $image[0]; ?>" alt="<?php echo get_the_title() ?>" itemprop="image">
-						<?php endif; ?>
-					</a>
-				</div>
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>  itemscope itemtype="http://schema.org/CreativeWork">
+				<a href="<?php echo post_permalink() ?>" itemprop="url" rel="bookmark">
+					<?php if (has_post_thumbnail( $post->ID ) ):
+						$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large') ?>
+						<img data-src="<?php echo $image[0]; ?>" alt="<?php echo get_the_title() ?>" itemprop="image">
+					<?php endif; ?>
+				</a>
 
 				<header>
 					<?php the_title( '<h2 itemprop="headline"><a href="' . esc_url( get_permalink() ) . '" itemprop="url" rel="bookmark">', '</a></h2>' ); ?>

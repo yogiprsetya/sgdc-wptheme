@@ -22,14 +22,14 @@
       while ($popular->have_posts()) : $popular->the_post();
     ?>
 
-    <article itemscope>
+    <article itemscope itemtype="http://schema.org/CreativeWork">
       <?php the_post_thumbnail('lazy'); ?>
 
       <span>
         <?php $category = get_the_category(); echo $category[0]->cat_name; ?>
       </span>
 
-      <h2><a itemprop="url" rel="bookmark" href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a></h2>
+      <h2 itemprop="headline"><a itemprop="url" rel="bookmark" href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a></h2>
 
       <div class="post-info">
         <?php the_author_posts_link(); ?> |

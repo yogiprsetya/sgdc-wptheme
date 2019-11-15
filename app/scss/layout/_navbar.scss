@@ -20,6 +20,10 @@
     overflow: hidden;
     margin: auto !important;
 
+    li {
+      display: inline;
+    }
+
     a {
       color: $text-color;
       padding: 0 15px;
