@@ -10,46 +10,47 @@
 get_header();
 ?>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main">
+	<?php if ( have_posts() ) : ?>
 
-		<?php if ( have_posts() ) : ?>
+		<header class="page-header">
+			<div class="container">
+				<?php
+					printf( esc_html__( 'Search Results for: %s', 'sgdc' ), '<h1>' . get_search_query() . '</h1>' );
+				?>
+			</div>
+		</header>
 
-			<header class="page-header">
-				<h1 class="page-title">
-					<?php
-					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'sgdc' ), '<span>' . get_search_query() . '</span>' );
-					?>
-				</h1>
-			</header><!-- .page-header -->
+		<section class="category-page row container">
+		<main role="main">
+			<?php while ( have_posts() ) : the_post(); ?>
 
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>  itemscope itemtype="http://schema.org/CreativeWork">
+				<a href="<?php echo post_permalink() ?>" itemprop="url" rel="bookmark">
+					<?php if (has_post_thumbnail( $post->ID ) ):
+						$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large') ?>
+						<img data-src="<?php echo $image[0]; ?>" alt="<?php echo get_the_title() ?>" itemprop="image">
+					<?php endif; ?>
+				</a>
+
+				<header>
+					<?php the_title( '<h2 itemprop="headline"><a href="' . esc_url( get_permalink() ) . '" itemprop="url" rel="bookmark">', '</a></h2>' ); ?>
+					<?php sgdc_posted_on() ?>
+
+					<div itemprop="text">
+						<?php the_excerpt(); ?>
+					</div>
+				</header>
+			</article>
 			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+				endwhile;
+					echo sgdc_get_pagination();
+				else :
+					get_template_part( 'template-parts/content', 'none' );
+				endif;
+			?>
+		</main>
 
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'search' );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
-
-		</main><!-- #main -->
-	</section><!-- #primary -->
-
+		<?php get_sidebar(); ?>
+	</section>
 <?php
-get_sidebar();
 get_footer();

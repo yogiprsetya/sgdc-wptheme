@@ -25,7 +25,7 @@
 
 <header class="main-menu" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
 	<section class="container">
-		<a class="brand" href="https://sukagitu.com/">SGDC
+		<a class="brand active" href="https://sukagitu.com/">SGDC
 			<!-- <img src="http://nunforest.com/mite-demo/images/logo.png" alt="logo sgdc"> -->
 		</a>
 
@@ -35,7 +35,7 @@
 
 		<nav id="myTopnav" class="topnav" role="navigation">
 			<ul itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-				<li itemprop="name"><a itemprop="url" href="/category/wisata/" class="active">SUKA JALAN</a></li>
+				<li itemprop="name"><a itemprop="url" href="/category/wisata/">SUKA JALAN</a></li>
 				<li itemprop="name"><a itemprop="url" href="/category/kuliner/">SUKA JAJAN</a></li>
 				<li itemprop="name"><a itemprop="url" href="/category/gaya-hidup">LIFESTYLE</a></li>
 				<li itemprop="name"><a itemprop="url" href="/category/inspirasi">INSPIRASI</a></li>
@@ -43,7 +43,7 @@
 			</ul>
 		</nav>
 
-		<form class="form-search" id="search">
+		<form class="form-search" id="search" role="search" action="<?php echo home_url(); ?>" _lpchecked="1">
 			<input type="text" name="s" id="s" placeholder="Pencarian">
 		</form>
 
@@ -53,3 +53,7 @@
 	</section>
 </header>
 
+<?php
+if ( is_singular() && get_option( 'thread_comments' ) )
+	wp_enqueue_script( 'comment-reply' );
+?>

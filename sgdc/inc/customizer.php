@@ -207,3 +207,9 @@ function sgdc_get_pagination(){
 	)));
 }
 
+function xtreme_enqueue_comments_reply() {
+	if( get_option( 'thread_comments' ) )  {
+		wp_enqueue_script( 'comment-reply' );
+	}
+}
+add_action( 'comment_form_before', 'xtreme_enqueue_comments_reply' );

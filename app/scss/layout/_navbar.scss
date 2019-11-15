@@ -4,6 +4,10 @@
   height: 100%;
   border-bottom: 1px solid rgba(204, 204, 204, 0.3);
 
+  .active {
+    color: $primary-color !important
+  }
+
   .container {
     height: 70px;
     display: -ms-flexbox;
@@ -43,10 +47,6 @@
     fill: $text-color;
     top: 5px;
     position: relative
-  }
-
-  .active {
-    color: $primary-color
   }
 
   // Search
