@@ -68,7 +68,7 @@
       text-decoration: underline;
     }
 
-    ul {
+    ul, ol {
       margin: 0 0 20px 30px;
       list-style: disc;
 
@@ -76,6 +76,10 @@
         margin-bottom: 5px;
         line-height: 1.5rem;
       }
+    }
+
+    ol {
+      list-style: decimal !important;
     }
 
     blockquote {
