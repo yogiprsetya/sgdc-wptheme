@@ -12,11 +12,10 @@
 
           <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope itemtype="http://schema.org/CreativeWork">
             <a href="<?php echo post_permalink() ?>" itemprop="url" rel="bookmark">
-              <?php
-                if(has_post_thumbnail()) :
-                  the_post_thumbnail('medium', ['class' => 'lazy']);
-                endif;
-              ?>
+              <?php if (has_post_thumbnail( $post->ID ) ):
+          		$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium') ?>
+          		<img data-src="<?php echo $image[0]; ?>" class="lazy" alt="<?php echo get_the_title() ?>" itemprop="image">
+          	  <?php endif; ?>
               <header>
                 <span>
                   <?php $category = get_the_category(); echo $category[0]->cat_name; ?>
@@ -25,8 +24,7 @@
                 <h2 itemprop="headline"><?php the_title(); ?></h2>
 
                 <p class="post-info">
-                  <?php the_author_posts_link(); ?> |
-                  <a href="<?php comments_link(); ?>"><?php comments_number(' 0 Comments',' 1 Comment',' % Comments'); ?></a>
+                  <?php the_author_posts_link(); ?> | <a href="<?php comments_link(); ?>"><?php comments_number(' 0 Comments',' 1 Comment',' % Comments'); ?></a>
                 </p>
               </header>
             </a>

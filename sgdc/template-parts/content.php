@@ -11,7 +11,10 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope="itemscope" itemtype="http://schema.org/CreativeWork">
 
-	<?php the_post_thumbnail('featured-image'); ?>
+	<?php if (has_post_thumbnail( $post->ID ) ):
+		$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-image') ?>
+		<img data-src="<?php echo $image[0]; ?>" class="lazy" alt="<?php echo get_the_title() ?>" itemprop="image">
+	<?php endif; ?>
 
 	<header>
 		<span class="post-category">

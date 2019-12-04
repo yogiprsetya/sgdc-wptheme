@@ -33,12 +33,12 @@ gulp.task('sass', () => {
     );
 });
 
-gulp.task('js', () => {
-    gulp.src('./app/js/*.js')
-    .pipe(concat('all.min.js'))
-    .pipe(terser())
-    .pipe(gulp.dest('./sgdc/js'));
-});
+// gulp.task('js', () => {
+//     gulp.src('./app/js/*.js')
+//     .pipe(concat('all.min.js'))
+//     .pipe(terser())
+//     .pipe(gulp.dest('./sgdc/js'));
+// });
 
 // Default Task. Local webserver dan sinkronisasi dengan browser.
 gulp.task('default', () => {
@@ -46,6 +46,6 @@ gulp.task('default', () => {
         proxy: "http://localhost/sgdc"
     });
     gulp.watch('./app/scss/**/*.scss', gulp.series(['sass']));
-    gulp.watch('./app/js/*.js', gulp.series(['js']));
+    // gulp.watch('./app/js/*.js', gulp.series(['js']));
     gulp.watch('./**/*').on('change', reload);
 });

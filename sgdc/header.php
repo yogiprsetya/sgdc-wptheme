@@ -39,7 +39,7 @@
 				<li itemprop="name"><a itemprop="url" href="/category/kuliner/">SUKA JAJAN</a></li>
 				<li itemprop="name"><a itemprop="url" href="/category/gaya-hidup">LIFESTYLE</a></li>
 				<li itemprop="name"><a itemprop="url" href="/category/inspirasi">INSPIRASI</a></li>
-				<li itemprop="name"><a itemprop="url" href="/kontak">SAY HI!</a></li>
+				<li itemprop="name"><a itemprop="url" target="_blank" href="/kontak">SAY HI!</a></li>
 			</ul>
 		</nav>
 

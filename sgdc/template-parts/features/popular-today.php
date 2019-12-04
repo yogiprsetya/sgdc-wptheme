@@ -23,7 +23,10 @@
     ?>
 
     <article itemscope itemtype="http://schema.org/CreativeWork">
-      <?php the_post_thumbnail('lazy'); ?>
+      <?php if (has_post_thumbnail( $post->ID ) ):
+        $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail') ?>
+        <img data-src="<?php echo $image[0]; ?>" class="lazy size-featured-image" alt="<?php echo get_the_title() ?>" itemprop="image">
+  	  <?php endif; ?>
 
       <span>
         <?php $category = get_the_category(); echo $category[0]->cat_name; ?>
