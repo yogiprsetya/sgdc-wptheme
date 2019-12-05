@@ -170,7 +170,8 @@ add_filter('the_content', 'add_image_responsive_class');
 
 add_filter('the_content', 'filter');
 function filter($content) {
-    return str_replace('src="', 'data-src="', $content);
+		// $filtersrc .= get_template_directory_uri() . "/img/spinner.svg";
+    return str_replace('src="', 'src="' . get_template_directory_uri() . "/img/spinner.svg" . '" data-src="', $content);
 }
 
 // Remove the calculated image sizes

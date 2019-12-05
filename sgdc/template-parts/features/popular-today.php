@@ -25,7 +25,7 @@
     <article itemscope itemtype="http://schema.org/CreativeWork">
       <?php if (has_post_thumbnail( $post->ID ) ):
         $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail') ?>
-        <img data-src="<?php echo $image[0]; ?>" class="lazy size-featured-image" alt="<?php echo get_the_title() ?>" itemprop="image">
+        <img data-src="<?php echo $image[0]; ?>" src="<?php echo get_template_directory_uri() . '/img/spinner.svg' ?>" class="lazy size-featured-image" alt="<?php echo get_the_title() ?>" itemprop="image">
   	  <?php endif; ?>
 
       <span>

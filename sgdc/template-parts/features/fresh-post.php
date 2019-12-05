@@ -14,7 +14,7 @@
             <a href="<?php echo post_permalink() ?>" itemprop="url" rel="bookmark">
               <?php if (has_post_thumbnail( $post->ID ) ):
           		$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium') ?>
-          		<img data-src="<?php echo $image[0]; ?>" class="lazy" alt="<?php echo get_the_title() ?>" itemprop="image">
+          		<img data-src="<?php echo $image[0]; ?>" class="lazy" src="<?php echo get_template_directory_uri() . '/img/spinner.svg' ?>" alt="<?php echo get_the_title() ?>" itemprop="image">
           	  <?php endif; ?>
               <header>
                 <span>
